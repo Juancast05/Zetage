@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Metropolitan';
+  src: url('/fonts/Metropolitan.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Vicenza';
+  src: url('/fonts/Vicenza.otf') format('opentype'), 
+       url('/fonts/Vicenza.ttf') format('truetype');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animación Marquee hacia la Derecha */
+@keyframes marqueeRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-marquee-right {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marqueeRight 50s linear infinite;
+}
+
+/* Efecto de subrayado para los links del header */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #E11D48;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+body { background-color: #0A0A0A; color: white; margin: 0; overflow-x: hidden; }
