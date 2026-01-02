@@ -1,12 +1,16 @@
+/* Actualiza el registro de tu fuente Metropolitan */
 @font-face {
   font-family: 'Metropolitan';
   src: url('/fonts/Metropolitan.ttf') format('truetype');
+  /* Esto le dice al navegador que si no tiene el carácter, salte a la siguiente */
+  unicode-range: U+0000-0039, U+0041-007A; 
 }
 
-@font-face {
-  font-family: 'Vicenza';
-  src: url('/fonts/Vicenza.otf') format('opentype'), 
-       url('/fonts/Vicenza.ttf') format('truetype');
+/* Crea una clase especial para los precios */
+.price-tag {
+  /* Usamos Metropolitan para el estilo, pero aseguramos una sans-serif para los números */
+  font-family: 'Metropolitan', 'Inter', 'sans-serif';
+  font-variant-numeric: tabular-nums; /* Alinea bien los números */
 }
 
 @tailwind base;
